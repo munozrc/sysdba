@@ -5,7 +5,7 @@
 ## **Tabla de contenido** ##
 1. [Servicios en Windows](#Servicios-en-Windows)
 2. [SQLPlus](#SQLPlus)
-
+3. [LSNRCTL](#LSNRCTL)
 
 ## Servicios en Windows ##
 
@@ -31,6 +31,62 @@ Para salir de la herramienta usaremos la combinacion de teclas `ctrl` + `c`, o e
 
 ```
 exit
+```
+
+Comando para ***apagar*** la base de datos:
+
+```
+shutdown
+```
+
+```
+shutdown immediate
+```
+
+Comando para ***iniciar*** la base de datos:
+
+```
+startup
+```
+
+```
+startup nomount
+```
+
+```
+alter database mount
+```
+
+```
+alter database open
+```
+
+## LSNRCTL
+
+Herramienta de linea de comandos para la gestion las conexiones remotas
+
+Para iniciar la herramienta desde un ***Command Prompt*** se utiliza el comando:
+
+```
+lsnrctl
+```
+
+Si deseamos listar el ***estado*** del LISTERNER ejecutamos el comando:
+
+```
+status
+```
+
+Para detener el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
+
+```
+stop
+```
+
+Para iniciar el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
+
+```
+start
 ```
 
 Más informacion sobre syntaxis en *[Markdown Guide](https://www.markdownguide.org/basic-syntax/)*.
