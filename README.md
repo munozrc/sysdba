@@ -26,4 +26,11 @@ Si deseamos listar el usuario usaremos el comando:
 ```
 show user
 ```
+
+Para salir de la herramienta usaremos la combinacion de teclas `ctrl` + `c`, o el comando:
+
+```
+exit
+```
+
 Más informacion sobre syntaxis en *[Markdown Guide](https://www.markdownguide.org/basic-syntax/)*.
