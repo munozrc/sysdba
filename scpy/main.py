@@ -24,7 +24,7 @@ def configDemandStart():
     if serviceOracle.returncode == 0 and serviceListener.returncode == 0:
         print('Servicios configurados en inicio Manual')
     else:
-        print('Error: Al congifuracion inicio de los servicios.')
+        print('Error: Al configurar inicio de los servicios.')
 
 def cli() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
