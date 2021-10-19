@@ -73,6 +73,56 @@ Otorgar permisos para establecer una conexion a la base de datos
 grant create session to NOMBRE_USUARIO
 ```
 
+Asignar `tablespace` a un usuario
+
+```
+alter user NOMBRE_USUARIO default tablespace users
+```
+
+Determinar el espacio sobre un `tablepace`
+
+```
+alter user NOMBRE_USUARIO quota unlimited on users
+```
+
+Otorgar permisos para crear procedimientos
+
+```
+grant create procedure to NOMBRE_USUARIO
+```
+
+### Gestion de tablas
+
+Otorgar permisos para crear tablas
+
+```
+grant create table to NOMBRE_USUARIO
+```
+
+Otorgar permisos para seleccionar datos de una tabla
+
+```
+grant select on NONBRE_TABLA to NOMBRE_USUARIO
+```
+
+Si deseamos seleccionar datos de una tabla de nuestro **schema**
+
+```
+select * from NOMBRE_TABLA
+```
+
+Si deseamos seleccionar datos de una tabla con otro **schema** al cual tenemos permisos
+
+```
+select * from SCHEMA.NOMBRE_TABLA
+```
+
+Insertar datos en una tabla de nuestro **schema**
+
+```
+insert into NOMBRE_TABLA(PARAMETRO1, PARAMETRO2) values(VALOR1, VALOR2)
+```
+
 ## LSNRCTL
 
 Herramienta de linea de comandos para la gestion las conexiones remotas
