@@ -1,6 +1,6 @@
-# SCPY CLI para Windows
+# 🛠 SCPY CLI para Windows
 
-## Como instalar
+## ¿Cómo instalar?
 
 Primero debemos descargar el ejecutable `scpy.exe` desde [aqui](https://github.com/munozrc/sysdba/raw/main/scpy/dist/scpy.exe). Despues crear el directorio `C:\SCPY` y mover el ejecutable al directorio creado.
 
@@ -10,7 +10,7 @@ Finalmente ejecutar en ***Commnad Prompt (CMD)*** con permisos de Administrador 
 setx /M path "%path%;C:\SCPY"
 ```
 
-## Como usar
+## ¿Cómo usar?
 
 Para usar necesitamos ***Commnad Prompt (CMD)*** con permisos de Administrador.
 
