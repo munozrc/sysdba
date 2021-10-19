@@ -123,6 +123,20 @@ Insertar datos en una tabla de nuestro **schema**
 insert into NOMBRE_TABLA(PARAMETRO1, PARAMETRO2) values(VALOR1, VALOR2)
 ```
 
+> Es importante siempre confirmar la transacion despues de efectuarla, ya que Oracle no permite **lectura sucias**. Esto se realizar con el comando:
+
+```
+commit
+```
+
+### Gestion de Sinonimos
+
+Para clear un **sinonimo publico**
+
+```
+create public synonym NOMBRE_SINONIMO for NOMBRE_TABLA
+```
+
 ## LSNRCTL
 
 Herramienta de linea de comandos para la gestion las conexiones remotas
