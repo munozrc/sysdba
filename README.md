@@ -61,6 +61,18 @@ alter database mount
 alter database open
 ```
 
+### Gestion de usuarios
+
+```
+crear user NOMBRE_USUARIO identified by PASSWORD_USER
+```
+
+Otorgar permisos para establecer una conexion a la base de datos
+
+```
+grant create session to NOMBRE_USUARIO
+```
+
 ## LSNRCTL
 
 Herramienta de linea de comandos para la gestion las conexiones remotas
