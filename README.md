@@ -21,7 +21,7 @@ Para iniciar la herramienta desde un ***Command Prompt*** se utiliza el comando:
 sqlplus / as sysdba
 ```
 
-Si deseamos listar el usuario usaremos el comando:
+Listar el usuario usaremos el comando:
 
 ```
 show user
@@ -63,61 +63,101 @@ alter database open
 
 ### Gestion de usuarios
 
+> Es recomendable aplicar los permisos a los roles, para despues asignar los roles a los usuario y no asignar permisos directamente a los usuarios.
+
+Crear un usuario:
+
 ```
-crear user NOMBRE_USUARIO identified by PASSWORD_USER
+create user NOMBRE_USUARIO identified by PASSWORD_USER
 ```
 
-Otorgar permisos para establecer una conexion a la base de datos
+Eliminar un usuario:
+
+```
+drop user NOMBRE_USUARIO
+```
+
+Bloquear un usuario:
+
+```
+alter user NOMBRE_USUARIO account lock
+```
+
+Desbloquear un usuario:
+
+```
+alter user NOMBRE_USUARIO account unlock
+```
+
+Otorgar permisos para establecer una conexion a la base de datos:
 
 ```
 grant create session to NOMBRE_USUARIO
 ```
 
-Asignar `tablespace` a un usuario
+Asignar `tablespace` a un usuario:
 
 ```
 alter user NOMBRE_USUARIO default tablespace users
 ```
 
-Determinar el espacio sobre un `tablepace`
+Determinar el espacio sobre un `tablepace`:
 
 ```
 alter user NOMBRE_USUARIO quota unlimited on users
 ```
 
-Otorgar permisos para crear procedimientos
+Otorgar permisos para crear procedimientos:
 
 ```
 grant create procedure to NOMBRE_USUARIO
 ```
 
+Crear un rol:
+
+```
+create role NOMBRE_ROL
+```
+
+Asignar un rol a un usuario:
+
+```
+grant NOMBRE_ROL to NOMBRE_USUARIO
+```
+
+Revocar un rol a un usuario:
+
+```
+revoke NOMBRE_ROL to NOMBRE_USUARIO
+```
+
 ### Gestion de tablas
 
-Otorgar permisos para crear tablas
+Otorgar permisos para crear tablas:
 
 ```
 grant create table to NOMBRE_USUARIO
 ```
 
-Otorgar permisos para seleccionar datos de una tabla
+Otorgar permisos para seleccionar datos de una tabla:
 
 ```
 grant select on NONBRE_TABLA to NOMBRE_USUARIO
 ```
 
-Si deseamos seleccionar datos de una tabla de nuestro **schema**
+Seleccionar datos de una tabla de nuestro **schema**:
 
 ```
 select * from NOMBRE_TABLA
 ```
 
-Si deseamos seleccionar datos de una tabla con otro **schema** al cual tenemos permisos
+Seleccionar datos de una tabla con otro **schema** al cual tenemos permisos:
 
 ```
 select * from SCHEMA.NOMBRE_TABLA
 ```
 
-Insertar datos en una tabla de nuestro **schema**
+Insertar datos en una tabla de nuestro **schema**:
 
 ```
 insert into NOMBRE_TABLA(PARAMETRO1, PARAMETRO2) values(VALOR1, VALOR2)
@@ -131,7 +171,7 @@ commit
 
 ### Gestion de Sinonimos
 
-Para clear un **sinonimo publico**
+Crear un **sinonimo publico**:
 
 ```
 create public synonym NOMBRE_SINONIMO for NOMBRE_TABLA
@@ -147,19 +187,19 @@ Para iniciar la herramienta desde un ***Command Prompt*** se utiliza el comando:
 lsnrctl
 ```
 
-Si deseamos listar el ***estado*** del LISTERNER ejecutamos el comando:
+Listar el ***estado*** del LISTERNER ejecutamos el comando:
 
 ```
 status
 ```
 
-Para detener el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
+Detener el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
 
 ```
 stop
 ```
 
-Para iniciar el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
+Iniciar el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
 
 ```
 start
