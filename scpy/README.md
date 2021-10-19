@@ -2,7 +2,7 @@
 
 ## Como instalar
 
-Primero debemos descargar el ejecutable `scpy.exe` desde aqui. Despues crear el directorio `C:\SCPY` y mover el ejecutable al directorio creado.
+Primero debemos descargar el ejecutable `scpy.exe` desde [aqui](https://github.com/munozrc/sysdba/raw/main/scpy/dist/scpy.exe). Despues crear el directorio `C:\SCPY` y mover el ejecutable al directorio creado.
 
 Finalmente ejecutar en ***Commnad Prompt (CMD)*** con permisos de Administrador el siguiente comando:
 
