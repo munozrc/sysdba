@@ -18,7 +18,7 @@ Para abrir el gestor de ***servicios en Windows*** debemos ejercutar `services.m
 
 ## SQLPlus
 
-Herramienta de linea de comandos para la gestion del motor de base de datos de Oracle. Este es el listado de comandos:
+Herramienta de linea de comandos para la gestión del motor de base de datos de Oracle. Este es el listado de comandos:
 
 Para iniciar la herramienta desde un ***Command Prompt*** se utiliza el comando:
 
