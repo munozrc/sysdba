@@ -3,9 +3,14 @@
 📚 Repo recopilatorio de recursos y información para la gestión de bases de datos con Oracle.
 
 ## **Tabla de contenido** ##
-1. [Servicios en Windows](#Servicios-en-Windows)
+1. [Servicios en Windows](#servicios-en-Windows)
 2. [SQLPlus](#SQLPlus)
-3. [LSNRCTL](#LSNRCTL)
+3. [Gestión de usuarios](#gestion-de-usuarios)
+4. [Tablas](#tablas)
+5. [Sinonimos](#sinonimos)
+6. [Vistas](#vistas)
+7. [Triggers](#triggers)
+8. [LSNRCTL](#LSNRCTL)
 
 ## Servicios en Windows ##
 
@@ -60,6 +65,8 @@ alter database mount
 ```
 alter database open
 ```
+
+[⬆](#)
 
 ## Gestion de usuarios
 
@@ -131,6 +138,8 @@ Revocar un rol a un usuario:
 revoke NOMBRE_ROL to NOMBRE_USUARIO
 ```
 
+[⬆](#)
+
 ## Tablas
 
 Otorgar permisos para crear tablas:
@@ -175,6 +184,8 @@ Crear tabla apartir de otra:
 create table NOMBRE_TABLA as select * from NOMBRE_TABLA where 1=0
 ```
 
+[⬆](#)
+
 ## Sinonimos
 
 Crear un **sinonimo publico**:
@@ -182,6 +193,8 @@ Crear un **sinonimo publico**:
 ```
 create public synonym NOMBRE_SINONIMO for NOMBRE_TABLA
 ```
+
+[⬆](#)
 
 ## Vistas
 
@@ -223,6 +236,8 @@ Eliminar una vista:
 drop view NOMBRE_VISTA
 ```
 
+[⬆](#)
+
 ## Triggers
 
 Crear trigger:
@@ -254,6 +269,8 @@ Eliminar un trigger:
 drop trigger NOMBRE_TRIGGER
 ```
 
+[⬆](#)
+
 ## LSNRCTL
 
 Herramienta de linea de comandos para la gestion las conexiones remotas
@@ -281,5 +298,7 @@ Iniciar el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
 ```
 start
 ```
+
+[⬆](#)
 
 Más informacion sobre syntaxis en *[Markdown Guide](https://www.markdownguide.org/basic-syntax/)*.
