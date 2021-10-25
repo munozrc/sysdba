@@ -66,7 +66,7 @@ alter database mount
 alter database open
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 ## Gestion de usuarios
 
