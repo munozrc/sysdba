@@ -108,7 +108,7 @@ Asignar `tablespace` a un usuario:
 alter user NOMBRE_USUARIO default tablespace users
 ```
 
-Determinar el espacio sobre un `tablepace`:
+Determinar el espacio sobre un `tablespace`:
 
 ```sql
 alter user NOMBRE_USUARIO quota unlimited on users
