@@ -138,7 +138,7 @@ Revocar un rol a un usuario:
 revoke NOMBRE_ROL to NOMBRE_USUARIO
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 ## Tablas
 
@@ -184,7 +184,7 @@ Crear tabla apartir de otra:
 create table NOMBRE_TABLA as select * from NOMBRE_TABLA where 1=0
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 ## Sinonimos
 
@@ -194,7 +194,7 @@ Crear un **sinonimo publico**:
 create public synonym NOMBRE_SINONIMO for NOMBRE_TABLA
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 ## Vistas
 
@@ -236,7 +236,7 @@ Eliminar una vista:
 drop view NOMBRE_VISTA
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 ## Triggers
 
@@ -269,7 +269,7 @@ Eliminar un trigger:
 drop trigger NOMBRE_TRIGGER
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 ## LSNRCTL
 
@@ -299,6 +299,6 @@ Iniciar el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
 start
 ```
 
-[⬆](#)
+[⬆](#tabla-de-contenido)
 
 Más informacion sobre syntaxis en *[Markdown Guide](https://www.markdownguide.org/basic-syntax/)*.
