@@ -3,14 +3,14 @@
 📚 Repo recopilatorio de recursos y información para la gestión de bases de datos con Oracle.
 
 ## **Tabla de contenido** ##
-1. [Servicios en Windows](#servicios-en-Windows)
-2. [SQLPlus](#SQLPlus)
+1. [Servicios en Windows](#servicios-en-windows)
+2. [SQLPlus](#sqlplus)
 3. [Gestión de usuarios](#gestion-de-usuarios)
 4. [Tablas](#tablas)
 5. [Sinonimos](#sinonimos)
 6. [Vistas](#vistas)
 7. [Triggers](#triggers)
-8. [LSNRCTL](#LSNRCTL)
+8. [LSNRCTL](#lsnrctl)
 
 ## Servicios en Windows ##
 
