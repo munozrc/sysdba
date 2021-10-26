@@ -30,7 +30,7 @@ La entrega es para la segunda nota y debe contener estos puntos:
 
 (NO PUEDE HABER CONSULTAS REPETIDAS ENTRE GRUPOS)
 
-## Recomendaciones
+## Observaciones
 
 No usar el esquema SYSTEM ni SYS.
 1.  Para crear las tablas, vistas y triggers cree un usuario especial para ello, no usar el DBA.
