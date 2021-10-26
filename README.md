@@ -11,6 +11,8 @@
 6. [Vistas](#vistas)
 7. [Triggers](#triggers)
 8. [LSNRCTL](#lsnrctl)
+9. [Herramienta SCPY](/scpy)
+10. [Proyecto](/proyecto)
 
 ## Servicios en Windows ##
 
