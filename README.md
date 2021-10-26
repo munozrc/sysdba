@@ -68,6 +68,13 @@ alter database mount
 alter database open
 ```
 
+Consultar todos los `tablespace` desde SQL*Plus:
+
+```bash
+SELECT * FROM dba_tablespaces
+SELECT TABLESPACE_NAME FROM dba_tablespaces
+```
+
 [⬆](#tabla-de-contenido)
 
 ## Gestion de usuarios
