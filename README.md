@@ -24,47 +24,47 @@ Herramienta de linea de comandos para la gestión del motor de base de datos de 
 
 Para iniciar la herramienta desde un ***Command Prompt*** se utiliza el comando:
 
-```
+```bash
 sqlplus / as sysdba
 ```
 
 Listar el usuario usaremos el comando:
 
-```
+```bash
 show user
 ```
 
 Para salir de la herramienta usaremos la combinacion de teclas `ctrl` + `c`, o el comando:
 
-```
+```bash
 exit
 ```
 
 Comando para ***apagar*** la base de datos:
 
-```
+```bash
 shutdown
 ```
 
-```
+```bash
 shutdown immediate
 ```
 
 Comando para ***iniciar*** la base de datos:
 
-```
+```bash
 startup
 ```
 
-```sql
+```bash
 startup nomount
 ```
 
-```sql
+```bash
 alter database mount
 ```
 
-```sql
+```bash
 alter database open
 ```
 
@@ -77,67 +77,67 @@ alter database open
 Crear un usuario:
 
 ```sql
-create user NOMBRE_USUARIO identified by PASSWORD_USER
+CREATE USER NOMBRE_USUARIO IDENTIFIED BY PASSWORD_USER
 ```
 
 Eliminar un usuario:
 
 ```sql
-drop user NOMBRE_USUARIO
+DROP USER NOMBRE_USUARIO
 ```
 
 Bloquear un usuario:
 
 ```sql
-alter user NOMBRE_USUARIO account lock
+ALTER USER NOMBRE_USUARIO ACCOUNT LOCK
 ```
 
 Desbloquear un usuario:
 
 ```sql
-alter user NOMBRE_USUARIO account unlock
+ALTER USER NOMBRE_USUARIO ACCOUNT UNLOCK
 ```
 
 Otorgar permisos para establecer una conexion a la base de datos:
 
 ```sql
-grant create session to NOMBRE_USUARIO
+GRANT CREATE SESSION TO NOMBRE_USUARIO
 ```
 
 Asignar `tablespace` a un usuario:
 
 ```sql
-alter user NOMBRE_USUARIO default tablespace users
+ALTER USER NOMBRE_USUARIO DEFAULT TABLESPACE NOMBRE_TABLESPACE
 ```
 
 Determinar el espacio sobre un `tablespace`:
 
 ```sql
-alter user NOMBRE_USUARIO quota unlimited on users
+ALTER USER NOMBRE_USUARIO QUOTA UNLIMITED ON NOMBRE_TABLESPACE
 ```
 
 Otorgar permisos para crear procedimientos:
 
 ```sql
-grant create procedure to NOMBRE_USUARIO
+GRANT CREATE PROCEDURE TO NOMBRE_USUARIO
 ```
 
 Crear un rol:
 
 ```sql
-create role NOMBRE_ROL
+CREATE ROLE NOMBRE_ROL
 ```
 
 Asignar un rol a un usuario:
 
 ```sql
-grant NOMBRE_ROL to NOMBRE_USUARIO
+GRANT NOMBRE_ROL to NOMBRE_USUARIO
 ```
 
 Revocar un rol a un usuario:
 
 ```sql
-revoke NOMBRE_ROL to NOMBRE_USUARIO
+REVOKE NOMBRE_ROL to NOMBRE_USUARIO
 ```
 
 [⬆](#tabla-de-contenido)
@@ -147,43 +147,44 @@ revoke NOMBRE_ROL to NOMBRE_USUARIO
 Otorgar permisos para crear tablas:
 
 ```sql
-grant create table to NOMBRE_USUARIO
+GRANT CREATE TABLE TO NOMBRE_USUARIO
 ```
 
 Otorgar permisos para seleccionar datos de una tabla:
 
 ```sql
-grant select on NONBRE_TABLA to NOMBRE_USUARIO
+GRANT SELECT ON NOMBRE_TABLA TO NOMBRE_USUARIO
 ```
 
 Seleccionar datos de una tabla de nuestro **schema**:
 
 ```sql
-select * from NOMBRE_TABLA
+SELECT * FROM NOMBRE_TABLA
 ```
 
 Seleccionar datos de una tabla con otro **schema** al cual tenemos permisos:
 
 ```sql
-select * from SCHEMA.NOMBRE_TABLA
+SELECT * FROM SCHEMA.NOMBRE_TABLA
 ```
 
 Insertar datos en una tabla de nuestro **schema**:
 
 ```sql
-insert into NOMBRE_TABLA(PARAMETRO1, PARAMETRO2) values(VALOR1, VALOR2)
+INSERT INTO NOMBRE_TABLA(PARAMETRO1, PARAMETRO2) VALUES(VALOR1, VALOR2)
 ```
 
 > Es importante siempre confirmar la transacion despues de efectuarla, ya que Oracle no permite **lectura sucias**. Esto se realizar con el comando:
 
 ```sql
-commit
+COMMIT
 ```
 
 Crear tabla apartir de otra:
 
 ```sql
 create table NOMBRE_TABLA as select * from NOMBRE_TABLA where 1=0
+CREATE TABLE NOMBRE_TABLA AS SELECT * from NOMBRE_TABLA WHERE 1=0
 ```
 
 [⬆](#tabla-de-contenido)
@@ -193,7 +194,7 @@ create table NOMBRE_TABLA as select * from NOMBRE_TABLA where 1=0
 Crear un **sinonimo publico**:
 
 ```sql
-create public synonym NOMBRE_SINONIMO for NOMBRE_TABLA
+CREATE PUBLIC SYNONYM NOMBRE_SINONIMO FOR NOMBRE_TABLA
 ```
 
 [⬆](#tabla-de-contenido)
@@ -205,37 +206,37 @@ Las vistas generalmente son usadas para agregar una capa de abstracción sobre l
 Crear vista actualizable:
 
 ```sql
-create or replace view NOMBRE_VISTA(PARAMETRO1, PARAMETRO2)
-as
-select PARAMETRO1, PARAMETRO2 from NOMBRE_TABLA
+CREATE OR REPLACE VIEW NOMBRE_VISTA(PARAMETRO1, PARAMETRO2)
+AS
+SELECT PARAMETRO1, PARAMETRO2 FROM NOMBRE_TABLA
 ```
 
 Usar una vista actualizable:
 
 ```sql
-select * from NOMBRE_VISTA
+SELECT * FROM NOMBRE_VISTA
 ```
 
 ```sql
-insert into NOMBRE_VISTA(PARAMETRO1, PARAMETRO2) values(1,2)
+INSERT INTO NOMBRE_VISTA(PARAMETRO1, PARAMETRO2) VALUES(VALOR1, VALOR2)
 ```
 
 ```sql
-update NOMBRE_VISTA set PARAMETRO2=5 where PARAMETRO1=1
+UPDATE NOMBRE_VISTA SET PARAMETRO2=5 WHERE PARAMETRO1=1
 ```
 
 Ejemplo: Un usuario desea consultar todos los posts que el creo, los cuales estan almacenados en la tabla con nombre POSTS
 
 ```sql
-create or replace view VPOSTS(TITULO, CONTENIDO, FECHA)
-as
-select P.TITULO, P.CONTENIDO, P.FECHA from POSTS P join USUARIOS U on P.AUTOR=U.ID
+CREATE OR REPLACE VIEW VPOSTS(TITULO, CONTENIDO, FECHA)
+AS
+SELECT P.TITULO, P.CONTENIDO, P.FECHA FROM POSTS P JOIN USUARIOS U ON P.AUTOR=U.ID
 ```
 
 Eliminar una vista:
 
 ```sql
-drop view NOMBRE_VISTA
+DROP VIEW NOMBRE_VISTA
 ```
 
 [⬆](#tabla-de-contenido)
@@ -245,12 +246,12 @@ drop view NOMBRE_VISTA
 Crear trigger:
 
 ```sql
-create or replace trigger NOMBRE_TRIGGER
-after OPERACION on NOMBRE_TABLA
-for each row
-begin
+CREATE OR REPLACE TRIGGER NOMBRE_TRIGGER
+AFTER OPERACION ON NOMBRE_TABLA
+FOR EACH ROW
+BEGIN
     NULL;
-end
+END
 ```
 
 En la operacion de `insert` se puede acceder unicamente a los valores ***nuevos***, por el contrario en la operacion `delete` unicamente se puede acceder a los valores ***antiguos***, en el caso de la oparación `update` se puede acceder a ambos valores ***nuevos*** y ***antiguos***
@@ -268,7 +269,7 @@ Acceder a los valores mediante palabras reservadas en Oracle:
 Eliminar un trigger:
 
 ```sql
-drop trigger NOMBRE_TRIGGER
+DROP TRIGGER NOMBRE_TRIGGER
 ```
 
 [⬆](#tabla-de-contenido)
@@ -279,25 +280,25 @@ Herramienta de linea de comandos para la gestion las conexiones remotas
 
 Para iniciar la herramienta desde un ***Command Prompt*** se utiliza el comando:
 
-```
+```bash
 lsnrctl
 ```
 
 Listar el ***estado*** del LISTERNER ejecutamos el comando:
 
-```
+```bash
 status
 ```
 
 Detener el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
 
-```
+```bash
 stop
 ```
 
 Iniciar el ***servicio*** del LISTERNER tenemos que ejecutar el comando:
 
-```
+```bash
 start
 ```
 
