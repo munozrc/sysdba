@@ -147,6 +147,16 @@ Revocar un rol a un usuario:
 REVOKE NOMBRE_ROL to NOMBRE_USUARIO
 ```
 
+Consultar los privilegios de un usuario
+```sql
+SELECT PRIVILEGE FROM user_sys_privs;
+```
+
+Consultar los privilegios de una tabla:
+````sql
+SELECT * FROM all_tab_privs_made;
+```
+
 [⬆](#tabla-de-contenido)
 
 ## Tablas
@@ -190,7 +200,6 @@ COMMIT
 Crear tabla apartir de otra:
 
 ```sql
-create table NOMBRE_TABLA as select * from NOMBRE_TABLA where 1=0
 CREATE TABLE NOMBRE_TABLA AS SELECT * from NOMBRE_TABLA WHERE 1=0
 ```
 
