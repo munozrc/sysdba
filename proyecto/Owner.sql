@@ -29,13 +29,13 @@ CREATE TABLE hoteles(
 /* 2.2 Creamos la secuencia para la PK de Tabla hoteles */
 CREATE SEQUENCE hoteles_seq START WITH 1;
 
-CREATE OR REPLACE TRIGGER hoteles_bir 
-BEFORE INSERT ON hoteles 
-FOR EACH ROW
+CREATE OR REPLACE TRIGGER hoteles_bir
+  BEFORE INSERT ON hoteles
+  FOR EACH ROW
 BEGIN
-  SELECT hoteles_seq.NEXTVAL
-  INTO   :new.id
-  FROM   dual;
+  SELECT hoteles_seq.nextval
+  INTO :new.id
+  FROM dual;
 END;
 
 /* 2.3 ingresar datos a la Tabla hoteles */
