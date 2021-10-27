@@ -153,7 +153,7 @@ SELECT PRIVILEGE FROM user_sys_privs;
 ```
 
 Consultar los privilegios de una tabla:
-````sql
+```sql
 SELECT * FROM all_tab_privs_made;
 ```
 
