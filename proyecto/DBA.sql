@@ -11,7 +11,7 @@
 */
 
 /* 1.1 consultamos los tablespace disponibles en la DB mediante el comando */
-SELECT * FROM dba_tablespaces;
+SELECT TABLESPACE_NAME FROM dba_tablespaces;
 
 /* 1.2 creamos el usuario OWNER */
 CREATE USER Owner IDENTIFIED BY 123456;
