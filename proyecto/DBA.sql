@@ -25,8 +25,10 @@ ALTER USER Owner DEFAULT TABLESPACE USERS;
 /* 1.5 determinamos el espacio sobre el tablespace USERS */
 ALTER USER Owner QUOTA UNLIMITED ON USERS;
 
-/* 1.6 asignamos el permiso para crear tablas */
+/* 1.6 asignamos el permiso para crear tablas, secuencias y triggers */
 GRANT CREATE TABLE TO Owner;
+GRANT CREATE SEQUENCE TO Owner;
+GRANT CREATE TRIGGER TO Owner;
 
 /* 1.7 creamos el usuario para las auditorias */
 CREATE USER Audit IDENTIFIED BY 123456;
@@ -40,5 +42,7 @@ ALTER USER Audit DEFAULT TABLESPACE USERS;
 /* 1.10 determinamos el espacio sobre el tablespace USERS */
 ALTER USER Audit QUOTA UNLIMITED ON USERS;
 
-/* 1.11 asignamos el permiso para crear tablas */
+/* 1.6 asignamos el permiso para crear tablas, secuencias y triggers */
 GRANT CREATE TABLE TO Audit;
+GRANT CREATE SEQUENCE TO Audit;
+GRANT CREATE TRIGGER TO Audit;
