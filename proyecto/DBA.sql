@@ -1,7 +1,7 @@
 /*
     Archivo para el usuario DBA o SYSTEM.
 
-    Nombre estudiantes:
+    Grupo de trabajo:
     - 
     - 
 
