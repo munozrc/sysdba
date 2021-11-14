@@ -33,8 +33,8 @@ permisos sobre las tablas.
 
 5. Se deben entregar las sentencias en archivos txt así:
 
-    - Un archivo con las sentencias ejecutadas por el dba o usuario system. El nombre del archivo será **DBA.txt**
+    - Un archivo con las sentencias ejecutadas por el dba o usuario system. El nombre del archivo será **ModificaDBA.txt**
 
-    - Un archivo para el usuario dueño de los objetos. El nombre del archivo ser **Owner.txt**
+    - Un archivo para el usuario dueño de los objetos. El nombre del archivo ser **ModificaOwner.txt**
 
-    - Un archivo para el usuario de auditoria. El nombre del archivo ser **Audit.txt**
+    - Un archivo para el usuario de auditoria. El nombre del archivo ser **ModificaAudit.txt**
