@@ -1,5 +1,7 @@
 # 🛠 SCPY CLI para Windows
 
+scpy es un CLI para gestionar los servicios de OracleServiceXE y OracleXETNSListener.
+
 ## ¿Cómo instalar?
 
 Primero debemos descargar el ejecutable `scpy.exe` desde [aqui](https://github.com/munozrc/sysdba/raw/main/scpy/dist/scpy.exe). Despues crear el directorio `C:\SCPY` y mover el ejecutable al directorio creado.
