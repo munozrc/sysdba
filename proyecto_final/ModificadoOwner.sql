@@ -68,6 +68,15 @@ AS
         DELETE RESERVAS WHERE ID=AID;
         COMMIT;
     END;
+
+    -- Desarrollar un algoritmo que impida reservar más habitaciones de las que posee el hotel.
+    FUNCTION CHECK_DISPONIBILIDAD(AHOTEL NUMBER, AFECHA DATE) RETURN NUMBER AS
+    V NUMBER:=0;
+    BEGIN
+        V:=SELECT AFECHA FROM RESERVAS WHERE HOTEL=AHOTEL;
+        COMMIT;
+        RETURN V;
+    END;
 END;
 /
 
